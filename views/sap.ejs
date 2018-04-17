@@ -1,0 +1,85 @@
+<% include partials/hr %>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/appro.css">
+
+
+<div class="container">
+
+</div>
+<table class="table table-hover table-dark" id="tableId">
+<thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">requested Date</th>
+    <th scope="col">Names</th>
+    <th scope="col">StartDate</th>
+    <th scope="col">EndDate</th>
+    <th scope="col">days</th>
+		<th scope="col">Comment</th>
+    <th scope="col"></th>
+    <th scope="col"></th>
+  </tr>
+</thead>
+
+<tbody>
+
+    <%for (i=requests.length-1;i>=0;i--){%>
+    <tr>
+      <th scope="row"><%=(requests.length-i)%></th>
+    <td><%=requests[i].Date.toDateString()%></td>
+    <td><%=requests[i].identity%></td>
+    <td><%=requests[i].startDate%></td>
+    <td><%=requests[i].endDate%></td>
+    <td><%=requests[i].totalDays%></td>
+    <td><%=requests[i].comment%></td>
+
+    <td>
+      <form action="/sap/<%=requests[i]._id%>?_method=PUT" method="POST">
+        <button class="btn btn-outline-info btn-sm">Approve</button>
+    </form>
+    </td>
+    <td>
+			<button class="btn btn-outline-danger btn-sm" id="<%=requests[i].id%>">Reject</button>
+
+      <form action="/sap/reject/<%=requests[i]._id%>?_method=PUT" method="POST" class="rej" id="<%=requests[i].id%>2">
+				<div class="ui form">
+				  <div class="field">
+						<input type="text" name="email" value="<%=requests[i].email%>" style="display:none">
+				    <label style="color:white">Comment Box</label>
+				    <textarea name="Comment" style="color:black" required></textarea>
+				  </div>
+        <button class="btn btn-outline-danger btn-sm" type="submit">Reject</button>
+				<a class="btn btn-outline-info btn-sm" id="<%=requests[i].id%>3">cancel</a>
+      </form>
+    </td>
+
+          <%}%>
+
+  </tr>
+</tbody>
+</table>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script type="text/javascript">
+  $('.leaves').addClass('active');
+
+
+</script>
+<%for (i=requests.length-1;i>=0;i--){%>
+	<script type="text/javascript">
+			$('#<%=requests[i].id%>').click(function(){
+				 $('#<%=requests[i].id%>2').animate({height: "toggle", opacity: "toggle"}, "slow");
+			 $('#<%=requests[i].id%>').addClass('bye');
+		 });
+		 $('#<%=requests[i].id%>3').click(function(){
+				$('#<%=requests[i].id%>2').animate({height: "toggle", opacity: "toggle"}, "slow");
+			$('#<%=requests[i].id%>').removeClass('bye');
+		});
+	</script>
+
+	<%}%>
+
+</html>

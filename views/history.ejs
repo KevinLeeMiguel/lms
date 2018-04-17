@@ -1,0 +1,35 @@
+<% include partials/hr %>
+
+<div class="ui container" style="margin-top:2%">
+
+  <% for(i=requests.length-1; i>=0 ;i--) {%>
+    <% if(requests[i].status == "Reject") {%>
+
+      <div class="container" style="margin-top:1%">
+        <div class="ui negative message">
+          <div class="header">
+            Rejected
+          </div>
+          <p>Leave requested on <strong><%=requests[i].Date.toDateString()%></strong> with startDate <strong>( <%=requests[i].startDate%> )</strong> and endDate <strong><%=requests[i].endDate%></strong> of <%=requests[i].totalDays%> days was rejected</p>
+       </div>
+    </div>
+    <%}else if (requests[i].status == "Approved"){ %>
+      <div class="container" style="margin-top:1%">
+      <div class="ui success message">
+       <div class="header">
+         Approved
+       </div>
+       <p>Leave requested on <strong><%=requests[i].Date.toDateString()%></strong> with startDate <strong><%=requests[i].startDate%></strong> and endDate <strong><%=requests[i].endDate%></strong> of <%=requests[i].totalDays%> days was Approved</p>
+      </div>
+      </div>
+    <%}%>
+<%}%>
+</div>
+
+
+  </body>
+  <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  <script type="text/javascript">
+    $('.history').addClass('active');
+  </script>
+</html>

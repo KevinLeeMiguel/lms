@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>UMURAGE's PROJECT 1</title>
+      <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container">
+  <div class="row">
+    <div class="login-page">
+      <div class="col-xs-0 col-sm-2 col-md-4"></div>
+
+      <div class="form col-xs-12 col-sm-8 col-md-4">
+
+        <form class="register-form" action="/register" method="POST">
+          <input type="text" placeholder="Names" name="names" required/>
+          <input type="text" placeholder="username" name="username" required/>
+          <input type="password" placeholder="password" name="password" required/>
+          <input type="email" placeholder="email address" name="email" required/>
+          <input type="text" placeholder="job title" name="jobtitle" required/>
+          <input type="text" placeholder="Tel" name="Tel" required/>
+          <input type="text" placeholder="Department" name="department" required/>
+          <button type="submit">create</button>
+          <p class="message">Already registered? <a href="#">Sign In</a></p>
+        </form>
+        <form class="login-form" action="/login" method="POST">
+          <input type="text" placeholder="username" name="username" required>
+          <input type="password" placeholder="password" name="password" required/>
+          <button type="submit" >login</button>
+          <p class="message">Not registered?<a href="#">Create an account</a></p>
+        </form>
+      </div>
+
+      <div class="col-xs-0 col-sm-2 col-md-4"></div>
+    </div>
+  </div>
+</div>
+
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+
+
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

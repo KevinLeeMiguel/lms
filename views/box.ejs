@@ -1,0 +1,37 @@
+<% include partials/hr%>
+
+<link rel="stylesheet" type="text/css" href="css/pro.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css" rel="stylesheet" type="text/css" />
+
+<div class="ui container" id="cont">
+  <div class="row">
+      <div class="col-md-4 col-md-offset-4 col-sm-6 col-xs-12 profile-badge">
+          <img src="img/green.png">
+          <div class="profile-pic">
+              <img src="img/avatar.png">
+          </div>
+          <div class="user-detail text-center">
+            <h3>GARDENS FOR HEALTH international</h3>
+            <p></p><P>Username</P>
+            <h4><%=user.username%></h4>
+            <p></p>
+            <P>NAMES</P>
+            <h4><%=user.names%></h4>
+            <p></p>
+            <p>JOB DESCRIPTION</p>
+            <h4><%=user.jobDesc%></h4>
+            <p></p>
+            <p>department</p>
+            <h4><%=user.department%></h4>
+          </div>
+      </div>
+  </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script type="text/javascript">
+  $('.box').addClass('active');
+</script>
+</html>

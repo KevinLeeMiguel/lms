@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <title>HR</title>
+  </head>
+  <body>
+    <% if(user.isHR === true) { %>
+      <div class="ui pointing menu">
+        <a class="item box" href="/box">Profile</a>
+        <a class="item add" href="/approve">Add Users</a>
+        <a class="item leaves" href="/hap">leave requests</a>
+        <a class="item history" href="/history">history</a>
+        <a class="item leaverequest" href="/leaverequest">request leave</a>
+        <div class="right menu">
+          <a class="ui item" href="/logout">Logout</a>
+        </div>
+      </div>
+    <%}else if (user.isSup){%>
+  <div class="ui pointing menu">
+    <a class="item box" href="/box">Profile</a>
+    <a class="item leaves" href="/sap">leave requests</a>
+    <a class="item history" href="/history">history</a>
+    <a class="item leaverequest" href="/leaverequest">request leave</a>
+    <div class="right menu">
+      <a class="ui item" href="/logout">Logout</a>
+    </div>
+  </div>
+  <%}else{%>
+    <div class="ui pointing menu">
+      <a class="item box" href="/box">Profile</a>
+      <a class="item history" href="/history">history</a>
+      <a class="item leaverequest" href="/leaverequest">request leave</a>
+      <div class="right menu">
+        <a class="ui item" href="/logout">Logout</a>
+      </div>
+    </div>
+    <%}%>
